@@ -1,0 +1,18 @@
+{
+  "name": "06_servidores-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "queryParams.js",
+  "type": "module",
+  "scripts": {
+    "start": "node queryParams.js",
+    "start-dev": "nodemon queryParams.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

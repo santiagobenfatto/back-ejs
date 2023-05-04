@@ -1,0 +1,15 @@
+{{!-- Vista hija --}}
+<div>
+    <h1>Hola {{user.name}}, cómo estas??</h1>
+    {{#if isAdmin}}
+        {{#each food}}
+        <div>
+            <p>{{this.name}}</p>
+            <p>{{this.price}}</p>
+        </div>
+        {{/each}}
+    {{else}}
+        <p>No tienes permisos, já.</p>
+    {{/if}}
+</div>
+<script src="localhost:8080/js/index.js"></script>
