@@ -10,8 +10,10 @@ Swal.fire({
         return !value && "Necesitas escribir un nombre de usuario para comenzar a chatear"
     },
     allowOutsideClick: false,
+    allowEscapeKey: false
 }).then(result => {
     user = result.value
+    socket.emit('authenticated', user)
 })
 
 
@@ -34,11 +36,22 @@ socket.on('messageLogs', data => {
     let log = document.getElementById('messageLogs')
     let messages = ""
     data.forEach(message => {
-        messages = messages +`${message.user} dice: ${message.message} </br>`
+        messages += `${message.user} dice: ${message.message} </br>`
         log.innerHTML = messages
     });
 })
 
+socket.on('newUserConnected', data => {
+    Swal.fire({
+        toast: true,
+        position: 'top-end',
+        showConfirmationButton: false,
+        timer: 3000,
+        title: `${data} se ha unido al chat`,
+        icon: 'success'
+
+    })
+})
 
 // Swal.fire({
 //     title:"hi coder",

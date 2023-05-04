@@ -34,5 +34,11 @@ io.on('connection', socket => {
         messages.push(data)
         io.emit('messageLogs', messages)
     })
+
+    socket.on('authenticated', data => {
+        socket.emit('messageLogs', messages)
+        socket.broadcast.emit('newUserConnected', data)
+    })
+
 })
 
