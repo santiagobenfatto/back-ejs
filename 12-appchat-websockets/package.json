@@ -6,7 +6,7 @@
   },
   "name": "12-appchat-websockets",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "src/app.js",
   "devDependencies": {},
   "type": "module",
   "scripts": {

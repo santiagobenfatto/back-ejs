@@ -22,10 +22,9 @@ app.use(express.static(`${__dirname}/public`))
 app.use('/', viewsRouter)
 
 
-
 let messages = []
 
-//Io.on('connection) es el handshake
+//Io.on('connection') es el handshake
 io.on('connection', socket => {
     console.log('New client connected')
 
